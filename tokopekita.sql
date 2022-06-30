@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.4
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 13, 2020 at 10:21 AM
--- Server version: 10.3.22-MariaDB-log-cll-lve
--- PHP Version: 7.3.6
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 30 Jun 2022 pada 19.47
+-- Versi server: 10.4.16-MariaDB
+-- Versi PHP: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `k0702714_tokopekita`
+-- Database: `tokopekita`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Struktur dari tabel `cart`
 --
 
 CREATE TABLE `cart` (
@@ -37,18 +36,23 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `cart`
+-- Dumping data untuk tabel `cart`
 --
 
 INSERT INTO `cart` (`idcart`, `orderid`, `userid`, `tglorder`, `status`) VALUES
 (10, '15wKVT0nej25Y', 2, '2020-03-16 12:10:42', 'Selesai'),
-(11, '15Swf8Ye0Fm.M', 2, '2020-03-16 12:17:34', 'Cart'),
-(12, '15PzF03ejd8W2', 1, '2020-05-13 02:40:48', 'Confirmed');
+(11, '15Swf8Ye0Fm.M', 2, '2020-03-16 12:17:34', 'Selesai'),
+(12, '15PzF03ejd8W2', 1, '2020-05-13 02:40:48', 'Pengiriman'),
+(13, '16ZWAMXDR8PQ2', 3, '2022-06-26 10:07:32', 'Selesai'),
+(14, '16fj9ZiOBL/Qk', 3, '2022-06-26 10:15:10', 'Confirmed'),
+(15, '16yeUeNm.OR8c', 1, '2022-06-30 16:13:26', 'Cart'),
+(16, '168TLpj3aqNDc', 2, '2022-06-30 16:15:43', 'Payment'),
+(17, '16lohR24Nmlok', 3, '2022-06-30 17:33:53', 'Cart');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detailorder`
+-- Struktur dari tabel `detailorder`
 --
 
 CREATE TABLE `detailorder` (
@@ -59,17 +63,20 @@ CREATE TABLE `detailorder` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `detailorder`
+-- Dumping data untuk tabel `detailorder`
 --
 
 INSERT INTO `detailorder` (`detailid`, `orderid`, `idproduk`, `qty`) VALUES
-(13, '15wKVT0nej25Y', 1, 100),
-(14, '15PzF03ejd8W2', 2, 1);
+(16, '16ZWAMXDR8PQ2', 5, 1),
+(17, '16fj9ZiOBL/Qk', 5, 1),
+(18, '16yeUeNm.OR8c', 5, 1),
+(19, '168TLpj3aqNDc', 5, 1),
+(20, '16lohR24Nmlok', 5, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -79,18 +86,17 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`idkategori`, `namakategori`, `tgldibuat`) VALUES
-(1, 'Bunga Tangkai', '2019-12-20 07:28:34'),
-(2, 'Bunga Papan', '2019-12-20 07:34:17'),
-(3, 'Bunga Hidup', '2020-03-16 12:15:40');
+(1, 'Kebutuhan Pokok', '2019-12-20 07:28:34'),
+(2, 'Perawatan', '2019-12-20 07:34:17');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `konfirmasi`
+-- Struktur dari tabel `konfirmasi`
 --
 
 CREATE TABLE `konfirmasi` (
@@ -104,16 +110,16 @@ CREATE TABLE `konfirmasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `konfirmasi`
+-- Dumping data untuk tabel `konfirmasi`
 --
 
 INSERT INTO `konfirmasi` (`idkonfirmasi`, `orderid`, `userid`, `payment`, `namarekening`, `tglbayar`, `tglsubmit`) VALUES
-(1, '15PzF03ejd8W2', 1, 'Bank BCA', 'Admin', '2020-05-16', '2020-05-13 02:41:51');
+(2, '16fj9ZiOBL/Qk', 3, 'Bank BCA', 'Ricky Prasetyo', '2022-06-26', '2022-06-26 10:23:19');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
+-- Struktur dari tabel `login`
 --
 
 CREATE TABLE `login` (
@@ -129,17 +135,18 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `login`
+-- Dumping data untuk tabel `login`
 --
 
 INSERT INTO `login` (`userid`, `namalengkap`, `email`, `password`, `notelp`, `alamat`, `tgljoin`, `role`, `lastlogin`) VALUES
 (1, 'Admin', 'admin', '$2y$10$GJVGd4ji3QE8ikTBzNyA0uLQhiGd6MirZeSJV1O6nUpjSVp1eaKzS', '01234567890', 'Indonesia', '2020-03-16 11:31:17', 'Admin', NULL),
-(2, 'Guest', 'guest', '$2y$10$xXEMgj5pMT9EE0QAx3QW8uEn155Je.FHH5SuIATxVheOt0Z4rhK6K', '01234567890', 'Indonesia', '2020-03-16 11:30:40', 'Member', NULL);
+(2, 'Guest', 'guest', '$2y$10$xXEMgj5pMT9EE0QAx3QW8uEn155Je.FHH5SuIATxVheOt0Z4rhK6K', '01234567890', 'Indonesia', '2020-03-16 11:30:40', 'Member', NULL),
+(3, 'Ricky Prasetyo', 'ricky@gmail.com', '$2y$10$8Z3vuPpqPBtWnvyFaFzPNe6xR41nWjk4XphtTLMxsPVNnSakpFY8y', '089627362376', 'Jakarta', '2022-06-26 03:27:11', 'Member', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembayaran`
+-- Struktur dari tabel `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
@@ -151,7 +158,7 @@ CREATE TABLE `pembayaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pembayaran`
+-- Dumping data untuk tabel `pembayaran`
 --
 
 INSERT INTO `pembayaran` (`no`, `metode`, `norek`, `logo`, `an`) VALUES
@@ -162,7 +169,7 @@ INSERT INTO `pembayaran` (`no`, `metode`, `norek`, `logo`, `an`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
@@ -178,20 +185,18 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
 INSERT INTO `produk` (`idproduk`, `idkategori`, `namaproduk`, `gambar`, `deskripsi`, `rate`, `hargabefore`, `hargaafter`, `tgldibuat`) VALUES
-(1, 1, 'Mawar Merah', 'produk/7443a12318c5f4f29059d243fd14f447.png', 'Setangkai mawar merah', 5, 23000, 19000, '2019-12-20 09:10:26'),
-(2, 1, 'Mawar Putih', 'produk/15kwuDMbYtraw.png', 'Setangkai mawar putih', 4, 24000, 19500, '2019-12-20 09:24:13'),
-(3, 3, 'Bunga Hidup', 'produk/15Ak7lFMfvuJc.jpg', 'Bunga Hidup', 5, 25000, 15000, '2020-03-16 12:16:53');
+(5, 1, 'Makanan Kucing', 'produk/16EnXeLLwjIsA.jpg', 'Makanan kucing untuk jagoan', 4, 300000, 200000, '2022-06-26 10:06:37');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `cart`
+-- Indeks untuk tabel `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`idcart`),
@@ -199,7 +204,7 @@ ALTER TABLE `cart`
   ADD KEY `orderid_2` (`orderid`);
 
 --
--- Indexes for table `detailorder`
+-- Indeks untuk tabel `detailorder`
 --
 ALTER TABLE `detailorder`
   ADD PRIMARY KEY (`detailid`),
@@ -207,102 +212,102 @@ ALTER TABLE `detailorder`
   ADD KEY `idproduk` (`idproduk`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`idkategori`);
 
 --
--- Indexes for table `konfirmasi`
+-- Indeks untuk tabel `konfirmasi`
 --
 ALTER TABLE `konfirmasi`
   ADD PRIMARY KEY (`idkonfirmasi`),
   ADD KEY `userid` (`userid`);
 
 --
--- Indexes for table `login`
+-- Indeks untuk tabel `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`userid`);
 
 --
--- Indexes for table `pembayaran`
+-- Indeks untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`no`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`idproduk`),
   ADD KEY `idkategori` (`idkategori`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT untuk tabel `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `idcart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idcart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `detailorder`
+-- AUTO_INCREMENT untuk tabel `detailorder`
 --
 ALTER TABLE `detailorder`
-  MODIFY `detailid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `detailid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `konfirmasi`
+-- AUTO_INCREMENT untuk tabel `konfirmasi`
 --
 ALTER TABLE `konfirmasi`
-  MODIFY `idkonfirmasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idkonfirmasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `login`
+-- AUTO_INCREMENT untuk tabel `login`
 --
 ALTER TABLE `login`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `pembayaran`
+-- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
   MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `idproduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idproduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `detailorder`
+-- Ketidakleluasaan untuk tabel `detailorder`
 --
 ALTER TABLE `detailorder`
   ADD CONSTRAINT `idproduk` FOREIGN KEY (`idproduk`) REFERENCES `produk` (`idproduk`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `orderid` FOREIGN KEY (`orderid`) REFERENCES `cart` (`orderid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `konfirmasi`
+-- Ketidakleluasaan untuk tabel `konfirmasi`
 --
 ALTER TABLE `konfirmasi`
   ADD CONSTRAINT `userid` FOREIGN KEY (`userid`) REFERENCES `login` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `produk`
+-- Ketidakleluasaan untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD CONSTRAINT `idkategori` FOREIGN KEY (`idkategori`) REFERENCES `kategori` (`idkategori`) ON DELETE CASCADE ON UPDATE CASCADE;

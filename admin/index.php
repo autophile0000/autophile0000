@@ -241,7 +241,7 @@
         <!-- footer area start-->
         <footer>
             <div class="footer-area">
-                <p>by Kelompok 7</p>
+                <p>By Ricky's Lab</p>
             </div>
         </footer>
         <!-- footer area end-->

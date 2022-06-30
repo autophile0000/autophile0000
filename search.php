@@ -7,7 +7,7 @@ $s = $_POST['Search'];
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tokopekita - Pencarian</title>
+<title>Pet Shop - Pencarian</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -90,7 +90,7 @@ $s = $_POST['Search'];
 				</ul>
 			</div>
 			<div class="w3ls_logo_products_left">
-				<h1><a href="index.php">Tokopekita</a></h1>
+				<h1><a href="index.php">Pet Shop</a></h1>
 			</div>
 		<div class="w3l_search">
 			<form action="search.php" method="post">

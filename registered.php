@@ -35,7 +35,7 @@ if(isset($_POST['adduser']))
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tokopekita - Daftar</title>
+<title>Pet Shop- Daftar</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -100,7 +100,7 @@ if(isset($_POST['adduser']))
 				</ul>
 			</div>
 			<div class="w3ls_logo_products_left">
-				<h1><a href="index.php">Tokopekita</a></h1>
+				<h1><a href="index.php">Pet Shop</a></h1>
 			</div>
 		<div class="w3l_search">
 			<form action="#" method="post">
@@ -206,7 +206,7 @@ if(isset($_POST['adduser']))
 					<h3>Hubungi Kami</h3>
 					
 					<ul class="address">
-						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Richard's Lab, DKI Jakarta.</li>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Ricky's Lab, DKI Jakarta.</li>
 						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@email">info@email</a></li>
 						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+62 8113 2322</li>
 					</ul>
@@ -226,7 +226,7 @@ if(isset($_POST['adduser']))
 		<div class="footer-copy">
 			
 			<div class="container">
-				<p>© 2020 Richard's Lab. All rights reserved</p>
+				<p>© 2022 Ricky's Lab. All rights reserved</p>
 			</div>
 		</div>
 		

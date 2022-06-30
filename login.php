@@ -160,7 +160,7 @@ $timenow = date("j-F-Y-h:i:s A");
 									</li>
 								</ul>
 							</div>
-							</nav>
+						</nav>
 			</div>
 		</div>
 		
