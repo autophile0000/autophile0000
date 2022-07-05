@@ -252,8 +252,8 @@
         buttons: [
             'print'
         ]
-    } );
-	} );
+    });
+	});
 	</script>
 	
 	<!-- jquery latest version -->

@@ -32,11 +32,11 @@ if(isset($_POST["checkout"])){
 <!DOCTYPE html>
 <html>
 <head>
-<title>TPet Shop - Checkout</title>
+<title>Pet Shop - Checkout</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Tokopekita, Richard's Lab" />
+
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
@@ -194,7 +194,7 @@ if(isset($_POST["checkout"])){
 <!-- checkout -->
 	<div class="checkout">
 		<div class="container">
-			<h1>Terima kasih, <?=$_SESSION['name']?> telah membeli <?php echo $itungtrans3 ?> barang di Tokopekita</span></h1>
+			<h1>Terima kasih, <?=$_SESSION['name']?> telah membeli <?php echo $itungtrans3 ?> barang di Toko Pet Shop Qu</span></h1>
 			<div class="checkout-right">
 				<table class="timetable_sub">
 					<thead>

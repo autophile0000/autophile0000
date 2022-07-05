@@ -11,7 +11,7 @@ include 'dbconnect.php';
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Falenda Flora, Ruben Agung Santoso" />
+
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
@@ -282,7 +282,7 @@ include 'dbconnect.php';
 		<div class="footer-copy">
 			
 			<div class="container">
-				<p>© 2020 Ricky's Lab. All rights reserved</p>
+				<p>© 2022 Ricky's Lab. All rights reserved</p>
 			</div>
 		</div>
 		

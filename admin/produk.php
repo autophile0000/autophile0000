@@ -219,7 +219,6 @@
 													<td><?php echo $p['rate'] ?></td>
 													<td><?php echo $p['hargabefore'] ?></td>
 													<td><?php echo $p['tgldibuat'] ?></td>
-													
 												</tr>		
 												
 												<?php 

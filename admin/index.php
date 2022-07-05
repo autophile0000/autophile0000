@@ -129,8 +129,8 @@
 			
 			
 			<!-- header area end -->
-			<?php 
-			/*
+			<!-- <?php 
+			
 				$periksa_bahan=mysqli_query($conn,"select * from stock_brg where stock <10");
 				while($p=mysqli_fetch_array($periksa_bahan)){	
 					if($p['stock']>=1){	
@@ -146,9 +146,9 @@
 					}
 				}
 				
-				*/
+				
 				?>
-			
+			 -->
             
             <!-- page title area end -->
             <div class="main-content-inner">
